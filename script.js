@@ -7,50 +7,49 @@
 // ================================
 // CHAVE PIX - COPIAR AUTOMATICAMENTE
 // ================================
-
 const botaoPix = document.getElementById("copiarPix");
 const chavePix = document.getElementById("chavePix");
 const mensagemPix = document.getElementById("mensagemPix");
 
-if (botaoPix && chavePix) {
+if (botaoPix) {
 
     botaoPix.addEventListener("click", async () => {
 
-        const textoPix = chavePix.textContent.trim();
+        const texto = chavePix.value;
 
         try {
 
-            if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(texto);
 
-                await navigator.clipboard.writeText(textoPix);
+            mensagemPix.textContent = "✅ Chave PIX copiada!";
 
-            } else {
+        } catch {
 
-                const area = document.createElement("textarea");
-                area.value = textoPix;
-                document.body.appendChild(area);
-                area.select();
-                document.execCommand("copy");
-                document.body.removeChild(area);
+            const campo = document.createElement("textarea");
 
-            }
+            campo.value = texto;
 
-            if (mensagemPix) {
-                mensagemPix.innerHTML = "✅ Chave PIX copiada!";
-                mensagemPix.classList.add("mostrar");
+            document.body.appendChild(campo);
 
-                setTimeout(() => {
-                    mensagemPix.classList.remove("mostrar");
-                }, 3000);
-            }
+            campo.select();
 
-        } catch (erro) {
+            document.execCommand("copy");
 
-            alert("Não foi possível copiar automaticamente.\n\nChave PIX:\n" + textoPix);
+            document.body.removeChild(campo);
+
+            mensagemPix.textContent = "✅ Chave PIX copiada!";
 
         }
 
+        setTimeout(() => {
+
+            mensagemPix.textContent = "";
+
+        },3000);
+
     });
+
+}
 
 }
 if (botaoPix) {
