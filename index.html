@@ -5,276 +5,181 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Convite Especial</title>
+<title>Presente Via Pix | Mirella Santos Teles</title>
 
+<link rel="stylesheet"
+href="style.css">
 
-<!-- CSS PRINCIPAL -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<!-- CSS DAS ANIMAÇÕES -->
-<link rel="stylesheet" href="css/animacoes.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
 </head>
 
-
 <body>
 
+<!-- Céu -->
 
-<!-- FUNDO DECORATIVO -->
+<div class="ceu"></div>
 
-<div class="fundo">
+<!-- Estrelas -->
 
+<div class="estrelas"></div>
 
-    <div class="rosa">🌹</div>
+<!-- Névoa -->
 
-    <div class="rosa">🌹</div>
+<div class="nevoa"></div>
 
-    <div class="rosa">🌹</div>
+<!-- Castelo -->
 
+<div class="castelo"></div>
+
+<!-- Partículas -->
+
+<div class="particulas"></div>
+
+<!-- Moldura -->
+
+<div class="container">
+
+<div class="moldura">
+
+<!-- Rosas -->
+
+<img
+src="img/rosa-esquerda.png"
+class="rosa-esquerda">
+
+<img
+src="img/rosa-direita.png"
+class="rosa-direita">
+
+<!-- Velas -->
+
+<img
+src="img/vela-esquerda.png"
+class="vela-esquerda">
+
+<img
+src="img/vela-direita.png"
+class="vela-direita">
+
+<!-- Conteúdo -->
+
+<div class="conteudo">
+
+<h1>
+
+🎁 Presente Especial
+
+</h1>
+
+<h2>
+
+Via Pix
+
+</h2>
+
+<p class="texto">
+
+<strong>
+
+Obrigada, de coração, por desejar me presentear!
+
+</strong>
+
+<br><br>
+
+Fico muito feliz e grata pelo seu carinho.
+
+Pensando em praticidade,
+
+optei por não fazer uma lista de presentes.
+
+Caso deseje me presentear,
+
+disponibilizo abaixo minha chave Pix.
+
+</p>
+
+<div class="dados">
+
+<h3>
+
+Mirella Santos Teles
+
+</h3>
+
+<p class="banco">
+
+Banco Inter
+
+</p>
+
+<input
+
+id="pix"
+
+readonly
+
+value="79 99940-0547"
+
+>
+
+<button
+
+id="btnPix"
+
+onclick="copiarPix()">
+
+📋 Copiar Chave Pix
+
+</button>
+
+<div
+
+id="msgCopiado"
+
+class="mensagem">
 
 </div>
 
+</div>
 
+<div class="qr">
 
+<img
 
-<!-- CARTÃO PRINCIPAL -->
+src="img/qrcode.png"
 
-<main class="cartao">
+alt="QR Code Pix">
 
+<p>
 
-    <header>
+Escaneie o QR Code
 
-        <h1>
-            Você está convidado
-        </h1>
+para presentear
 
+</p>
 
-        <p>
-            Para um momento muito especial
-        </p>
+</div>
 
+</div>
 
-    </header>
+</div>
 
+</div>
 
-
-
-
-    <!-- IMAGEM PRINCIPAL -->
-
-    <img 
-    src="img/foto-evento.jpg"
-    alt="Imagem do convite"
-    class="imagem-convite">
-
-
-
-
-
-    <!-- TEXTO DO CONVITE -->
-
-    <section class="mensagem">
-
-
-        <h2>
-            Uma celebração inesquecível
-        </h2>
-
-
-        <p>
-
-            Será uma alegria ter você conosco
-            neste dia especial.
-
-        </p>
-
-
-    </section>
-
-
-
-
-
-
-    <!-- CONTAGEM REGRESSIVA -->
-
-
-    <section class="tempo">
-
-
-        <h3>
-            Falta pouco!
-        </h3>
-
-
-        <div 
-        id="contador">
-            Carregando...
-        </div>
-
-
-        <div 
-        id="dataEvento"
-        data-data="2026-12-31T19:00:00">
-        </div>
-
-
-    </section>
-
-
-
-
-
-
-
-    <!-- LOCAL -->
-
-
-    <section class="local">
-
-
-        <h3>
-            📍 Local
-        </h3>
-
-
-        <p>
-            Endereço do evento
-        </p>
-
-
-    </section>
-
-
-
-
-
-
-
-    <!-- PIX -->
-
-
-    <section class="pix">
-
-
-        <h3>
-            🌹 Presente via Pix
-        </h3>
-
-
-        <p>
-            Chave Pix:
-        </p>
-
-
-        <strong id="chavePix">
-
-            coloque-sua-chave-pix
-
-        </strong>
-
-
-
-        <button id="copiarPix">
-
-            📋 Copiar chave Pix
-
-        </button>
-
-
-
-        <div id="mensagemPix">
-
-        </div>
-
-
-    </section>
-
-
-
-
-
-
-
-    <!-- VELAS -->
-
-    <div class="velas">
-
-
-        <span class="vela">
-            🕯️
-        </span>
-
-
-        <span class="vela">
-            🕯️
-        </span>
-
-
-        <span class="vela">
-            🕯️
-        </span>
-
-
-    </div>
-
-
-
-
-
-
-
-    <!-- CONFIRMAR PRESENÇA -->
-
-
-    <a 
-    class="whatsapp"
-    href="#"
-    target="_blank">
-
-        💬 Confirmar presença
-
-    </a>
-
-
-
-
-
-</main>
-
-
-
-
-
-
-
-<!-- MÚSICA OPCIONAL -->
-
-
-<audio 
-id="musica"
-loop>
-
-    <source 
-    src="audio/musica.mp3"
-    type="audio/mpeg">
-
-</audio>
-
-
-
-
-
-
-
-<!-- JAVASCRIPT -->
-
-<script src="js/script.js"></script>
-
+<script src="script.js"></script>
 
 </body>
 
