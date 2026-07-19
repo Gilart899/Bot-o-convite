@@ -1,431 +1,521 @@
-/* ===========================
-   GILART - PIX CARD PREMIUM
-=========================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+/*==========================================
+   BOTÃO CONVITE - PIX PREMIUM
+   Tema: Azul Marinho + Dourado
+==========================================*/
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-background:
-linear-gradient(180deg,#06142d,#0b2b59,#081a37);
+    min-height:100vh;
 
-min-height:100vh;
+    display:flex;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    justify-content:center;
 
-overflow:hidden;
+    align-items:center;
 
-position:relative;
+    overflow-x:hidden;
 
-}
+    background:
+    radial-gradient(circle at top,#14386d,#07162f 65%,#020814);
 
-/* Céu estrelado */
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-inset:0;
-
-background-image:
-
-radial-gradient(circle,#fff 1px,transparent 1px),
-radial-gradient(circle,#FFD56A 2px,transparent 2px);
-
-background-size:70px 70px,140px 140px;
-
-opacity:.35;
-
-animation:stars 90s linear infinite;
+    position:relative;
 
 }
 
-@keyframes stars{
+/*==========================
+  CÉU
+==========================*/
 
-from{
-transform:translateY(0);
-}
+.ceu{
 
-to{
-transform:translateY(-400px);
-}
+    position:fixed;
 
-}
+    inset:0;
 
-/* Partículas */
-
-.sparkles{
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-overflow:hidden;
-
-pointer-events:none;
+    background:
+    radial-gradient(circle at top,
+    rgba(255,255,255,.10),
+    transparent 45%);
 
 }
 
-.sparkles::before{
+/*==========================
+ ESTRELAS
+==========================*/
 
-content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
+.estrelas{
 
-position:absolute;
+    position:fixed;
 
-font-size:24px;
+    inset:0;
 
-width:100%;
+    background-image:
 
-animation:shine 18s linear infinite;
+    radial-gradient(#ffffff 1px,transparent 1px),
+    radial-gradient(#FFD86C 2px,transparent 2px);
 
-opacity:.6;
+    background-size:
+    60px 60px,
+    140px 140px;
 
-}
+    opacity:.45;
 
-@keyframes shine{
-
-0%{
-transform:translateY(100%);
-}
-
-100%{
-transform:translateY(-120%);
-}
+    animation:estrelas 120s linear infinite;
 
 }
 
-/* Cartão */
+@keyframes estrelas{
 
-.pix-card{
+    from{
 
-position:relative;
+        transform:translateY(0);
 
-width:92%;
-max-width:560px;
+    }
 
-padding:40px;
+    to{
 
-border-radius:35px;
+        transform:translateY(-400px);
 
-background:rgba(255,255,255,.13);
-
-backdrop-filter:blur(18px);
-
-border:2px solid rgba(255,215,90,.7);
-
-box-shadow:
-
-0 0 40px rgba(255,215,90,.35),
-
-0 0 120px rgba(255,215,90,.12);
-
-overflow:hidden;
+    }
 
 }
 
-/* Moldura */
+/*==========================
+ NÉVOA
+==========================*/
 
-.pix-card::before{
+.nevoa{
 
-content:"";
+    position:fixed;
 
-position:absolute;
+    inset:0;
 
-inset:10px;
+    background:
 
-border:2px solid rgba(255,215,90,.45);
+    radial-gradient(circle,
+    rgba(255,255,255,.08),
+    transparent 70%);
 
-border-radius:28px;
-
-pointer-events:none;
-
-}
-
-/* Castelo */
-
-.pix-card::after{
-
-content:"";
-
-position:absolute;
-
-bottom:0;
-
-left:0;
-
-right:0;
-
-height:230px;
-
-background:url("img/castelo.png")
-center bottom/contain no-repeat;
-
-opacity:.09;
-
-pointer-events:none;
+    animation:nevoa 15s ease-in-out infinite alternate;
 
 }
 
-.crown{
+@keyframes nevoa{
 
-font-size:55px;
+    from{
 
-text-align:center;
+        opacity:.20;
 
-margin-bottom:10px;
+    }
 
-animation:float 3s ease-in-out infinite;
+    to{
+
+        opacity:.45;
+
+    }
 
 }
 
-@keyframes float{
+/*==========================
+ CASTELO
+==========================*/
 
-50%{
-transform:translateY(-8px);
+.castelo{
+
+    position:fixed;
+
+    bottom:0;
+
+    width:100%;
+
+    height:330px;
+
+    background:url("img/castelo.png")
+    center bottom/contain no-repeat;
+
+    opacity:.14;
+
+    pointer-events:none;
+
 }
+
+/*==========================
+ PARTÍCULAS
+==========================*/
+
+.particulas{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.particulas::before{
+
+    content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
+
+    position:absolute;
+
+    width:100%;
+
+    font-size:28px;
+
+    animation:subir 18s linear infinite;
+
+    opacity:.45;
+
+}
+
+@keyframes subir{
+
+    from{
+
+        transform:translateY(120vh);
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+    }
+
+}
+
+/*==========================
+ CONTAINER
+==========================*/
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:25px;
+
+}
+
+/*==========================
+ CARTÃO
+==========================*/
+
+.moldura{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:620px;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:rgba(255,250,245,.10);
+
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,215,120,.80);
+
+    box-shadow:
+
+    0 0 25px rgba(255,215,0,.35),
+
+    0 0 80px rgba(255,215,0,.15);
+
+    overflow:hidden;
+
+}
+
+/* Moldura interna */
+
+.moldura::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:2px solid rgba(255,215,120,.45);
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+}
+
+/*==========================
+ CONTEÚDO
+==========================*/
+
+.conteudo{
+
+    position:relative;
+
+    z-index:5;
 
 }
 
 h1{
 
-font-family:'Cinzel',serif;
+    font-family:'Cinzel',serif;
 
-font-size:40px;
+    color:#FFD86C;
 
-text-align:center;
+    font-size:42px;
 
-color:#FFD56A;
+    text-align:center;
 
-text-shadow:0 0 15px gold;
+    text-shadow:
 
-}
-
-h3{
-
-font-family:'Cinzel',serif;
-
-text-align:center;
-
-font-size:24px;
-
-margin-bottom:30px;
-
-color:white;
+    0 0 12px rgba(255,215,0,.8);
 
 }
 
-.mensagem{
+h2{
 
-font-size:17px;
+    color:#ffffff;
 
-line-height:1.8;
+    text-align:center;
 
-color:#fff;
+    margin-top:8px;
 
-text-align:center;
+    margin-bottom:30px;
 
-margin-bottom:30px;
+    font-family:'Cinzel',serif;
+
+}
+
+.texto{
+
+    color:white;
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:17px;
 
 }
 
 .dados{
 
-text-align:center;
+    margin-top:35px;
 
 }
 
-.dados h2{
+.dados h3{
 
-font-family:'Cinzel',serif;
+    color:#FFD86C;
 
-color:#FFD56A;
+    text-align:center;
 
-margin-bottom:10px;
+    font-size:28px;
+
+    font-family:'Cinzel',serif;
 
 }
 
 .banco{
 
-display:block;
+    color:white;
 
-color:white;
+    text-align:center;
 
-margin-bottom:20px;
-
-font-size:18px;
+    margin:15px 0;
 
 }
 
 input{
 
-width:100%;
+    width:100%;
 
-padding:16px;
+    padding:16px;
 
-border:none;
+    border:none;
 
-border-radius:15px;
+    border-radius:14px;
 
-font-size:20px;
+    font-size:20px;
 
-text-align:center;
+    text-align:center;
 
-background:white;
-
-margin-bottom:20px;
+    background:white;
 
 }
 
-/* Botão Premium */
+/*==========================
+ BOTÃO
+==========================*/
 
 button{
 
-width:100%;
+    margin-top:18px;
 
-padding:18px;
+    width:100%;
 
-font-size:19px;
+    padding:18px;
 
-font-weight:bold;
+    border:none;
 
-border:none;
+    border-radius:15px;
 
-border-radius:15px;
+    font-size:18px;
 
-cursor:pointer;
+    font-weight:bold;
 
-color:#222;
+    cursor:pointer;
 
-background:linear-gradient(90deg,#FFE58A,#FFD54F,#FFE58A);
+    color:#4b3200;
 
-background-size:300%;
+    background:
 
-transition:.4s;
+    linear-gradient(90deg,
 
-box-shadow:0 8px 25px rgba(255,215,90,.45);
+    #FFEBA7,
+
+    #FFD14B,
+
+    #FFEBA7);
+
+    background-size:250%;
+
+    transition:.40s;
 
 }
 
 button:hover{
 
-background-position:right;
+    background-position:right;
 
-transform:scale(1.03);
-
-}
-
-/* QR */
-
-.qrcode{
-
-margin-top:35px;
-
-text-align:center;
+    transform:scale(1.02);
 
 }
 
-.qrcode img{
+.mensagem{
 
-width:220px;
+    text-align:center;
 
-padding:12px;
+    color:#8CFF8C;
 
-background:white;
+    font-weight:bold;
 
-border-radius:20px;
-
-box-shadow:0 0 30px rgba(255,215,90,.4);
+    margin-top:15px;
 
 }
 
-.qrcode p{
+/*==========================
+ QR CODE
+==========================*/
 
-margin-top:12px;
+.qr{
 
-color:white;
+    margin-top:35px;
 
-}
-
-/* Rosas */
-
-.rosa{
-
-position:absolute;
-
-font-size:45px;
-
-animation:girar 6s linear infinite;
+    text-align:center;
 
 }
 
-.esquerda{
+.qr img{
 
-left:15px;
+    width:220px;
 
-bottom:30px;
+    background:white;
 
-}
+    padding:10px;
 
-.direita{
+    border-radius:20px;
 
-right:15px;
-
-top:25px;
+    box-shadow:0 0 20px rgba(255,215,0,.40);
 
 }
 
-@keyframes girar{
+.qr p{
 
-50%{
-transform:rotate(10deg) scale(1.1);
-}
+    margin-top:10px;
 
-}
-
-/* Velas */
-
-.vela1{
-
-position:absolute;
-
-left:18px;
-
-top:120px;
-
-font-size:42px;
+    color:white;
 
 }
 
-.vela2{
+/*==========================
+ ROSAS
+==========================*/
 
-position:absolute;
+.rosa-esquerda{
 
-right:18px;
+    position:absolute;
 
-top:120px;
+    left:-10px;
 
-font-size:42px;
+    bottom:25px;
+
+    width:130px;
 
 }
 
-/* Responsivo */
+.rosa-direita{
+
+    position:absolute;
+
+    right:-10px;
+
+    top:25px;
+
+    width:130px;
+
+}
+
+/*==========================
+ VELAS
+==========================*/
+
+.vela-esquerda{
+
+    position:absolute;
+
+    left:20px;
+
+    top:120px;
+
+    width:60px;
+
+}
+
+.vela-direita{
+
+    position:absolute;
+
+    right:20px;
+
+    top:120px;
+
+    width:60px;
+
+}
+
+/*==========================
+ RESPONSIVO
+==========================*/
 
 @media(max-width:600px){
 
-.pix-card{
+.moldura{
 
 padding:28px;
 
@@ -437,21 +527,29 @@ font-size:30px;
 
 }
 
-.mensagem{
+.texto{
 
 font-size:15px;
 
 }
 
-.qrcode img{
+.qr img{
 
 width:180px;
 
 }
 
-button{
+.rosa-esquerda,
+.rosa-direita{
 
-font-size:17px;
+width:90px;
+
+}
+
+.vela-esquerda,
+.vela-direita{
+
+width:45px;
 
 }
 
