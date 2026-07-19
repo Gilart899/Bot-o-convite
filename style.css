@@ -1,17 +1,26 @@
-/*==========================================
-   BOTÃO CONVITE - PIX PREMIUM
-   Tema: Azul Marinho + Dourado
-==========================================*/
+/* ==========================================
+   STYLE.CSS
+   Convite Digital - Visual Principal
+========================================== */
+
+
+/* RESET */
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:
+    "Georgia",
+    "Times New Roman",
+    serif;
+
 }
 
-body{
 
-    font-family:'Poppins',sans-serif;
+
+body{
 
     min-height:100vh;
 
@@ -21,137 +30,29 @@ body{
 
     align-items:center;
 
+    padding:30px 15px;
+
     overflow-x:hidden;
 
-    background:
-    radial-gradient(circle at top,#14386d,#07162f 65%,#020814);
-
-    position:relative;
-
-}
-
-/*==========================
-  CÉU
-==========================*/
-
-.ceu{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    radial-gradient(circle at top,
-    rgba(255,255,255,.10),
-    transparent 45%);
-
-}
-
-/*==========================
- ESTRELAS
-==========================*/
-
-.estrelas{
-
-    position:fixed;
-
-    inset:0;
-
-    background-image:
-
-    radial-gradient(#ffffff 1px,transparent 1px),
-    radial-gradient(#FFD86C 2px,transparent 2px);
-
-    background-size:
-    60px 60px,
-    140px 140px;
-
-    opacity:.45;
-
-    animation:estrelas 120s linear infinite;
-
-}
-
-@keyframes estrelas{
-
-    from{
-
-        transform:translateY(0);
-
-    }
-
-    to{
-
-        transform:translateY(-400px);
-
-    }
-
-}
-
-/*==========================
- NÉVOA
-==========================*/
-
-.nevoa{
-
-    position:fixed;
-
-    inset:0;
 
     background:
 
-    radial-gradient(circle,
-    rgba(255,255,255,.08),
-    transparent 70%);
-
-    animation:nevoa 15s ease-in-out infinite alternate;
-
-}
-
-@keyframes nevoa{
-
-    from{
-
-        opacity:.20;
-
-    }
-
-    to{
-
-        opacity:.45;
-
-    }
+    radial-gradient(
+    circle at top,
+    #fff4dc,
+    #8b0000
+    );
 
 }
 
-/*==========================
- CASTELO
-==========================*/
 
-.castelo{
 
-    position:fixed;
+/* ================================
+   FUNDO DECORATIVO
+================================ */
 
-    bottom:0;
 
-    width:100%;
-
-    height:330px;
-
-    background:url("img/castelo.png")
-    center bottom/contain no-repeat;
-
-    opacity:.14;
-
-    pointer-events:none;
-
-}
-
-/*==========================
- PARTÍCULAS
-==========================*/
-
-.particulas{
+.fundo{
 
     position:fixed;
 
@@ -159,684 +60,248 @@ body{
 
     overflow:hidden;
 
-}
-
-.particulas::before{
-
-    content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
-
-    position:absolute;
-
-    width:100%;
-
-    font-size:28px;
-
-    animation:subir 18s linear infinite;
-
-    opacity:.45;
-
-}
-
-@keyframes subir{
-
-    from{
-
-        transform:translateY(120vh);
-
-    }
-
-    to{
-
-        transform:translateY(-120vh);
-
-    }
-
-}
-
-/*==========================
- CONTAINER
-==========================*/
-
-.container{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    padding:25px;
-
-}
-
-/*==========================
- CARTÃO
-==========================*/
-
-.moldura{
-
-    position:relative;
-
-    width:100%;
-
-    max-width:620px;
-
-    padding:45px;
-
-    border-radius:35px;
-
-    background:rgba(255,250,245,.10);
-
-    backdrop-filter:blur(18px);
-
-    border:2px solid rgba(255,215,120,.80);
-
-    box-shadow:
-
-    0 0 25px rgba(255,215,0,.35),
-
-    0 0 80px rgba(255,215,0,.15);
-
-    overflow:hidden;
-
-}
-
-/* Moldura interna */
-
-.moldura::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:12px;
-
-    border:2px solid rgba(255,215,120,.45);
-
-    border-radius:28px;
-
     pointer-events:none;
 
 }
 
-/*==========================
- CONTEÚDO
-==========================*/
 
-.conteudo{
-
-    position:relative;
-
-    z-index:5;
-
-}
-
-h1{
-
-    font-family:'Cinzel',serif;
-
-    color:#FFD86C;
-
-    font-size:42px;
-
-    text-align:center;
-
-    text-shadow:
-
-    0 0 12px rgba(255,215,0,.8);
-
-}
-
-h2{
-
-    color:#ffffff;
-
-    text-align:center;
-
-    margin-top:8px;
-
-    margin-bottom:30px;
-
-    font-family:'Cinzel',serif;
-
-}
-
-.texto{
-
-    color:white;
-
-    text-align:center;
-
-    line-height:1.9;
-
-    font-size:17px;
-
-}
-
-.dados{
-
-    margin-top:35px;
-
-}
-
-.dados h3{
-
-    color:#FFD86C;
-
-    text-align:center;
-
-    font-size:28px;
-
-    font-family:'Cinzel',serif;
-
-}
-
-.banco{
-
-    color:white;
-
-    text-align:center;
-
-    margin:15px 0;
-
-}
-
-input{
-
-    width:100%;
-
-    padding:16px;
-
-    border:none;
-
-    border-radius:14px;
-
-    font-size:20px;
-
-    text-align:center;
-
-    background:white;
-
-}
-
-/*==========================
- BOTÃO
-==========================*/
-
-button{
-
-    margin-top:18px;
-
-    width:100%;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:15px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    color:#4b3200;
-
-    background:
-
-    linear-gradient(90deg,
-
-    #FFEBA7,
-
-    #FFD14B,
-
-    #FFEBA7);
-
-    background-size:250%;
-
-    transition:.40s;
-
-}
-
-button:hover{
-
-    background-position:right;
-
-    transform:scale(1.02);
-
-}
-
-.mensagem{
-
-    text-align:center;
-
-    color:#8CFF8C;
-
-    font-weight:bold;
-
-    margin-top:15px;
-
-}
-
-/*==========================
- QR CODE
-==========================*/
-
-.qr{
-
-    margin-top:35px;
-
-    text-align:center;
-
-}
-
-.qr img{
-
-    width:220px;
-
-    background:white;
-
-    padding:10px;
-
-    border-radius:20px;
-
-    box-shadow:0 0 20px rgba(255,215,0,.40);
-
-}
-
-.qr p{
-
-    margin-top:10px;
-
-    color:white;
-
-}
-
-/*==========================
- ROSAS
-==========================*/
-
-.rosa-esquerda{
-
-    position:absolute;
-
-    left:-10px;
-
-    bottom:25px;
-
-    width:130px;
-
-}
-
-.rosa-direita{
-
-    position:absolute;
-
-    right:-10px;
-
-    top:25px;
-
-    width:130px;
-
-}
-
-/*==========================
- VELAS
-==========================*/
-
-.vela-esquerda{
-
-    position:absolute;
-
-    left:20px;
-
-    top:120px;
-
-    width:60px;
-
-}
-
-.vela-direita{
-
-    position:absolute;
-
-    right:20px;
-
-    top:120px;
-
-    width:60px;
-
-}
-
-/*==========================
- RESPONSIVO
-==========================*/
-
-@media(max-width:600px){
-
-.moldura{
-
-padding:28px;
-
-}
-
-h1{
-
-font-size:30px;
-
-}
-
-.texto{
-
-font-size:15px;
-
-}
-
-.qr img{
-
-width:180px;
-
-}
-
-.rosa-esquerda,
-.rosa-direita{
-
-width:90px;
-
-}
-
-.vela-esquerda,
-.vela-direita{
-
-width:45px;
-
-}
-
-}
-/* ==========================================
-   ANIMAÇÕES DO CONVITE DIGITAL
-========================================== */
-
-
-/* ================================
-   ENTRADA DO CARTÃO
-================================ */
-
-.cartao{
-    opacity:0;
-    transform:
-    translateY(40px)
-    scale(.95);
-
-    transition:
-    1.5s ease;
-}
-
-
-.cartao.entrada{
-
-    opacity:1;
-
-    transform:
-    translateY(0)
-    scale(1);
-
-}
-
-
-
-/* ================================
-   EFEITO 3D DO CARTÃO
-================================ */
-
-.cartao{
-
-    transform-style:preserve-3d;
-
-    perspective:1000px;
-
-}
-
-
-
-/* ================================
-   MENSAGEM PIX
-================================ */
-
-#mensagemPix{
-
-    position:fixed;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%)
-    translateY(40px);
-
-    background:
-    rgba(0,0,0,.8);
-
-    color:white;
-
-    padding:12px 25px;
-
-    border-radius:30px;
-
-    font-size:16px;
-
-    opacity:0;
-
-    transition:.5s;
-
-    z-index:9999;
-
-}
-
-
-
-#mensagemPix.mostrar{
-
-    opacity:1;
-
-    transform:
-    translateX(-50%)
-    translateY(0);
-
-}
-
-
-
-/* ================================
-   ROSAS FLUTUANDO
-================================ */
 
 .rosa{
 
-    animation:
+    position:absolute;
 
-    flutuarRosa
-    4s ease-in-out infinite;
+    font-size:55px;
 
-}
-
-
-
-@keyframes flutuarRosa{
-
-
-    0%,100%{
-
-        transform:
-        translateY(0)
-        rotate(0deg);
-
-    }
-
-
-    50%{
-
-        transform:
-        translateY(-15px)
-        rotate(5deg);
-
-    }
+    opacity:.7;
 
 }
 
 
+.rosa:nth-child(1){
 
-/* ================================
-   VELAS TREMULANDO
-================================ */
+    top:10%;
 
-.vela{
-
-    animation:
-
-    chama
-    0.8s infinite alternate;
+    left:10%;
 
 }
 
 
+.rosa:nth-child(2){
 
-@keyframes chama{
+    top:55%;
 
+    right:10%;
 
-    from{
-
-        transform:
-        rotate(-3deg)
-        scale(1);
-
-    }
+}
 
 
-    to{
+.rosa:nth-child(3){
 
-        transform:
-        rotate(3deg)
-        scale(1.08);
+    bottom:10%;
 
-    }
+    left:35%;
 
 }
 
 
 
 /* ================================
-   BRILHOS PELO FUNDO
+   CARTÃO PRINCIPAL
 ================================ */
 
-.brilho{
 
-    position:fixed;
+.cartao{
 
-    top:100%;
+    width:420px;
 
-    width:6px;
+    max-width:100%;
 
-    height:6px;
 
-    background:white;
+    background:
 
-    border-radius:50%;
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.95),
+    rgba(255,240,220,.95)
+    );
 
-    opacity:.8;
 
-    animation:
+    border-radius:25px;
 
-    subirBrilho
-    linear infinite;
+
+    padding:35px 25px;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.35);
+
+
+    position:relative;
+
+
+    z-index:20;
+
+}
+
+
+
+
+/* BORDA DOURADA */
+
+
+.cartao::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:10px;
+
+
+    border:2px solid #c89b3c;
+
+
+    border-radius:20px;
+
 
     pointer-events:none;
 
-    z-index:10;
 
 }
 
 
 
-@keyframes subirBrilho{
-
-
-    0%{
-
-        transform:
-        translateY(0)
-        scale(1);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        transform:
-        translateY(-120vh)
-        scale(.3);
-
-        opacity:0;
-
-    }
-
-}
 
 
 
 /* ================================
-   BOTÃO PIX COM DESTAQUE
+   TITULOS
 ================================ */
 
-#copiarPix{
 
-    animation:
+h1{
 
-    pulsarPix
-    2s infinite;
+
+    color:#8b0000;
+
+
+    font-size:34px;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+h2{
+
+
+    color:#a66b00;
+
+
+    margin:15px 0;
+
 
 }
 
 
 
-@keyframes pulsarPix{
+h3{
 
 
-    0%{
-
-        box-shadow:
-        0 0 0 0 rgba(255,255,255,.5);
-
-    }
+    color:#8b0000;
 
 
-    70%{
+    margin-bottom:10px;
 
-        box-shadow:
-        0 0 0 15px transparent;
-
-    }
-
-
-    100%{
-
-        box-shadow:
-        0 0 0 0 transparent;
-
-    }
 
 }
+
+
+
+
+p{
+
+
+    color:#444;
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   IMAGEM
+================================ */
+
+
+.imagem-convite{
+
+
+    width:100%;
+
+
+    border-radius:20px;
+
+
+    margin:25px 0;
+
+
+    border:5px solid #d4af37;
+
+
+}
+
+
+
+
+
+
+
+/* ================================
+   SEÇÕES
+================================ */
+
+
+.mensagem,
+.tempo,
+.local,
+.pix{
+
+
+    margin-top:25px;
+
+
+    padding:20px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    rgba(255,255,255,.6);
+
+
+}
+
+
+
+
 
 
 
@@ -844,62 +309,196 @@ width:45px;
    CONTADOR
 ================================ */
 
+
 #contador{
 
-    animation:
 
-    aparecer
-    1s ease;
+    margin-top:15px;
+
+
+    font-size:22px;
+
+
+    font-weight:bold;
+
+
+    color:#8b0000;
+
 
 }
 
 
 
-@keyframes aparecer{
-
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(20px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
-}
 
 
 
 /* ================================
-   RESPONSIVO CELULAR
+   PIX
 ================================ */
+
+
+#chavePix{
+
+
+    display:block;
+
+
+    margin:15px 0;
+
+
+    padding:12px;
+
+
+    background:#fff;
+
+
+    border-radius:10px;
+
+
+    color:#333;
+
+
+    word-break:break-all;
+
+
+}
+
+
+
+#copiarPix{
+
+
+    border:none;
+
+
+    padding:14px 25px;
+
+
+    border-radius:30px;
+
+
+    cursor:pointer;
+
+
+    background:#009c3b;
+
+
+    color:white;
+
+
+    font-size:16px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   VELAS
+================================ */
+
+
+.velas{
+
+
+    margin-top:25px;
+
+
+    font-size:40px;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   BOTÃO WHATSAPP
+================================ */
+
+
+.whatsapp{
+
+
+    display:inline-block;
+
+
+    margin-top:30px;
+
+
+    padding:15px 30px;
+
+
+    border-radius:40px;
+
+
+    background:#25d366;
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    font-weight:bold;
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+
+
+/* ================================
+   MOBILE
+================================ */
+
 
 @media(max-width:600px){
 
+
+    body{
+
+        padding:15px;
+
+    }
+
+
+
     .cartao{
 
-        width:90%;
+        padding:25px 15px;
 
     }
 
 
-    #mensagemPix{
 
-        width:80%;
+    h1{
 
-        text-align:center;
+        font-size:28px;
 
     }
+
+
+
+    .rosa{
+
+        font-size:40px;
+
+    }
+
 
 }
