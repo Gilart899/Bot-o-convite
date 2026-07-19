@@ -1,8 +1,3 @@
-/*==========================================
-   BOTÃO CONVITE - PIX PREMIUM
-   Tema: Azul Marinho + Dourado
-==========================================*/
-
 *{
     margin:0;
     padding:0;
@@ -10,525 +5,164 @@
 }
 
 body{
-
     font-family:'Poppins',sans-serif;
-
     min-height:100vh;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     overflow-x:hidden;
-
-    background:
-    radial-gradient(circle at top,#14386d,#07162f 65%,#020814);
-
+    background:radial-gradient(circle at top,#14386d,#07162f 65%,#020814);
     position:relative;
-
 }
 
-/*==========================
-  CÉU
-==========================*/
-
-.ceu{
-
+.ceu,
+.estrelas,
+.nevoa,
+.particulas{
     position:fixed;
-
     inset:0;
-
-    background:
-    radial-gradient(circle at top,
-    rgba(255,255,255,.10),
-    transparent 45%);
-
+    pointer-events:none;
 }
-
-/*==========================
- ESTRELAS
-==========================*/
 
 .estrelas{
-
-    position:fixed;
-
-    inset:0;
-
     background-image:
-
-    radial-gradient(#ffffff 1px,transparent 1px),
+    radial-gradient(#fff 1px,transparent 1px),
     radial-gradient(#FFD86C 2px,transparent 2px);
-
-    background-size:
-    60px 60px,
-    140px 140px;
-
-    opacity:.45;
-
-    animation:estrelas 120s linear infinite;
-
+    background-size:60px 60px,140px 140px;
+    opacity:.35;
 }
-
-@keyframes estrelas{
-
-    from{
-
-        transform:translateY(0);
-
-    }
-
-    to{
-
-        transform:translateY(-400px);
-
-    }
-
-}
-
-/*==========================
- NÉVOA
-==========================*/
-
-.nevoa{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-
-    radial-gradient(circle,
-    rgba(255,255,255,.08),
-    transparent 70%);
-
-    animation:nevoa 15s ease-in-out infinite alternate;
-
-}
-
-@keyframes nevoa{
-
-    from{
-
-        opacity:.20;
-
-    }
-
-    to{
-
-        opacity:.45;
-
-    }
-
-}
-
-
-/*==========================
- PARTÍCULAS
-==========================*/
-
-.particulas{
-
-    position:fixed;
-
-    inset:0;
-
-    overflow:hidden;
-
-}
-
-.particulas::before{
-
-    content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";
-
-    position:absolute;
-
-    width:100%;
-
-    font-size:28px;
-
-    animation:subir 18s linear infinite;
-
-    opacity:.45;
-
-}
-
-@keyframes subir{
-
-    from{
-
-        transform:translateY(120vh);
-
-    }
-
-    to{
-
-        transform:translateY(-120vh);
-
-    }
-
-}
-
-/*==========================
- CONTAINER
-==========================*/
 
 .container{
-
     width:100%;
-
     display:flex;
-
     justify-content:center;
-
-    padding:25px;
-
+    padding:20px;
 }
-
-/*==========================
- CARTÃO
-==========================*/
 
 .moldura{
-
     position:relative;
-
     width:100%;
-
     max-width:620px;
-
-    padding:45px;
-
-    border-radius:35px;
-
-    background:rgba(255,250,245,.10);
-
-    backdrop-filter:blur(18px);
-
-    border:2px solid rgba(255,215,120,.80);
-
-    box-shadow:
-
-    0 0 25px rgba(255,215,0,.35),
-
-    0 0 80px rgba(255,215,0,.15);
-
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border:2px solid rgba(255,215,120,.7);
+    box-shadow:0 0 30px rgba(255,215,0,.2);
     overflow:hidden;
-
 }
-
-/* Moldura interna */
-
-.moldura::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:12px;
-
-    border:2px solid rgba(255,215,120,.45);
-
-    border-radius:28px;
-
-    pointer-events:none;
-
-}
-
-/*==========================
- CONTEÚDO
-==========================*/
 
 .conteudo{
-
     position:relative;
-
-    z-index:5;
-
+    z-index:2;
 }
 
 h1{
-
-    font-family:'Cinzel',serif;
-
-    color:#FFD86C;
-
-    font-size:42px;
-
     text-align:center;
-
-    text-shadow:
-
-    0 0 12px rgba(255,215,0,.8);
-
+    color:#FFD86C;
+    font-family:'Cinzel',serif;
+    font-size:40px;
 }
 
 h2{
-
-    color:#ffffff;
-
     text-align:center;
-
-    margin-top:8px;
-
-    margin-bottom:30px;
-
+    color:#fff;
+    margin-bottom:25px;
     font-family:'Cinzel',serif;
-
 }
 
 .texto{
-
-    color:white;
-
+    color:#fff;
     text-align:center;
-
-    line-height:1.9;
-
-    font-size:17px;
-
+    line-height:1.8;
 }
 
 .dados{
-
-    margin-top:35px;
-
+    margin-top:30px;
 }
 
 .dados h3{
-
     color:#FFD86C;
-
     text-align:center;
-
-    font-size:28px;
-
     font-family:'Cinzel',serif;
-
 }
 
 .banco{
-
-    color:white;
-
+    color:#fff;
     text-align:center;
-
-    margin:15px 0;
-
+    margin:10px 0 20px;
 }
 
 input{
-
     width:100%;
-
-    padding:16px;
-
+    padding:15px;
     border:none;
-
-    border-radius:14px;
-
-    font-size:20px;
-
+    border-radius:12px;
+    font-size:18px;
     text-align:center;
-
-    background:white;
-
 }
 
-/*==========================
- BOTÃO
-==========================*/
-
 button{
-
-    margin-top:18px;
-
     width:100%;
-
-    padding:18px;
-
+    margin-top:15px;
+    padding:15px;
     border:none;
-
-    border-radius:15px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
+    border-radius:12px;
     cursor:pointer;
-
-    color:#4b3200;
-
-    background:
-
-    linear-gradient(90deg,
-
-    #FFEBA7,
-
-    #FFD14B,
-
-    #FFEBA7);
-
-    background-size:250%;
-
-    transition:.40s;
-
+    font-size:18px;
+    font-weight:bold;
+    background:linear-gradient(90deg,#FFEBA7,#FFD14B,#FFEBA7);
 }
 
 button:hover{
-
-    background-position:right;
-
     transform:scale(1.02);
-
 }
 
 .mensagem{
-
-    text-align:center;
-
-    color:#8CFF8C;
-
-    font-weight:bold;
-
     margin-top:15px;
-
-}
-
-/*==========================
- QR CODE
-==========================*/
-
-.qr{
-
-    margin-top:35px;
-
     text-align:center;
-
+    color:#7CFF7C;
+    font-weight:bold;
 }
-
-.qr img{
-
-    width:220px;
-
-    background:white;
-
-    padding:10px;
-
-    border-radius:20px;
-
-    box-shadow:0 0 20px rgba(255,215,0,.40);
-
-}
-
-.qr p{
-
-    margin-top:10px;
-
-    color:white;
-
-}
-
-/*==========================
- ROSAS
-==========================*/
 
 .rosa-esquerda{
-
     position:absolute;
-
-    left:-10px;
-
-    bottom:25px;
-
-    width:130px;
-
+    width:120px;
+    left:-20px;
+    bottom:-10px;
 }
 
 .rosa-direita{
-
     position:absolute;
-
-    right:-10px;
-
-    top:25px;
-
-    width:130px;
-
+    width:150px;
+    right:-20px;
+    top:-10px;
 }
-
-/*==========================
- VELAS
-==========================*/
-
-.vela-esquerda{
-
-    position:absolute;
-
-    left:20px;
-
-    top:120px;
-
-    width:60px;
-
-}
-
-.vela-direita{
-
-    position:absolute;
-
-    right:20px;
-
-    top:120px;
-
-    width:60px;
-
-}
-
-/*==========================
- RESPONSIVO
-==========================*/
 
 @media(max-width:600px){
 
 .moldura{
-
-padding:28px;
-
+    padding:25px;
 }
 
 h1{
+    font-size:30px;
+}
 
-font-size:30px;
-
+h2{
+    font-size:22px;
 }
 
 .texto{
-
-font-size:15px;
-
+    font-size:15px;
 }
 
-.qr img{
-
-width:180px;
-
+.rosa-esquerda{
+    width:80px;
 }
 
-.rosa-esquerda,
 .rosa-direita{
-
-width:90px;
-
-}
-
-.vela-esquerda,
-.vela-direita{
-
-width:45px;
-
+    width:100px;
 }
 
 }
