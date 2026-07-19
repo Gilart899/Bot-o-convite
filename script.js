@@ -1,17 +1,17 @@
 /* ==========================================
    SCRIPT.JS
-   Convite Digital - Animações e Interações
+   Convite Digital
 ========================================== */
 
+// ================================
+// BOTÃO COPIAR PIX
+// ================================
 
-// ================================
-// CHAVE PIX - COPIAR AUTOMATICAMENTE
-// ================================
 const botaoPix = document.getElementById("copiarPix");
 const chavePix = document.getElementById("chavePix");
 const mensagemPix = document.getElementById("mensagemPix");
 
-if (botaoPix) {
+if (botaoPix && chavePix) {
 
     botaoPix.addEventListener("click", async () => {
 
@@ -19,25 +19,26 @@ if (botaoPix) {
 
         try {
 
-            await navigator.clipboard.writeText(texto);
+            if (navigator.clipboard && window.isSecureContext) {
 
-            mensagemPix.textContent = "✅ Chave PIX copiada!";
+                await navigator.clipboard.writeText(texto);
 
-        } catch {
+            } else {
 
-            const campo = document.createElement("textarea");
+                const area = document.createElement("textarea");
+                area.value = texto;
+                document.body.appendChild(area);
+                area.select();
+                document.execCommand("copy");
+                document.body.removeChild(area);
 
-            campo.value = texto;
+            }
 
-            document.body.appendChild(campo);
+            mensagemPix.textContent = "✅ Chave PIX copiada com sucesso!";
 
-            campo.select();
+        } catch (erro) {
 
-            document.execCommand("copy");
-
-            document.body.removeChild(campo);
-
-            mensagemPix.textContent = "✅ Chave PIX copiada!";
+            mensagemPix.textContent = "❌ Não foi possível copiar.";
 
         }
 
@@ -45,267 +46,36 @@ if (botaoPix) {
 
             mensagemPix.textContent = "";
 
-        },3000);
+        }, 3000);
 
     });
 
 }
-
-}
-if (botaoPix) {
-
-    botaoPix.addEventListener("click", () => {
-
-        const textoPix = chavePix.innerText;
-
-        navigator.clipboard.writeText(textoPix)
-        .then(() => {
-
-            mensagemPix.classList.add("mostrar");
-
-            mensagemPix.innerHTML = "✅ Chave copiada!";
-
-            setTimeout(() => {
-
-                mensagemPix.classList.remove("mostrar");
-
-            },3000);
-
-        })
-        .catch(() => {
-
-            mensagemPix.innerHTML = "❌ Não foi possível copiar";
-
-            mensagemPix.classList.add("mostrar");
-
-        });
-
-    });
-
-}
-
-
 
 // ================================
-// ENTRADA SUAVE DO CARTÃO
+// ENTRADA DO CARTÃO
 // ================================
 
 window.addEventListener("load", () => {
 
-    const cartao = document.querySelector(".cartao");
+    const cartao = document.querySelector(".moldura");
 
-    if(cartao){
+    if (cartao) {
 
-        setTimeout(()=>{
+        cartao.style.opacity = "0";
+        cartao.style.transform = "translateY(30px)";
 
-            cartao.classList.add("entrada");
+        setTimeout(() => {
 
-        },300);
+            cartao.style.transition = "all .8s ease";
+            cartao.style.opacity = "1";
+            cartao.style.transform = "translateY(0)";
+
+        }, 200);
 
     }
 
 });
 
-
-
 // ================================
-// ANIMAÇÃO DAS ROSAS
-// ================================
-
-const rosas = document.querySelectorAll(".rosa");
-
-
-rosas.forEach((rosa,index)=>{
-
-    rosa.style.animationDelay = `${index * 0.5}s`;
-
-});
-
-
-
-// ================================
-// ANIMAÇÃO DAS VELAS
-// ================================
-
-const velas = document.querySelectorAll(".vela");
-
-
-velas.forEach((vela,index)=>{
-
-    vela.style.animationDelay = `${index * 0.3}s`;
-
-});
-
-
-
-// ================================
-// EFEITO DE PARTÍCULAS / BRILHOS
-// ================================
-
-function criarBrilho(){
-
-    const brilho = document.createElement("span");
-
-    brilho.classList.add("brilho");
-
-    brilho.style.left = Math.random() * 100 + "%";
-
-    brilho.style.animationDuration =
-    (Math.random()*3 + 2) + "s";
-
-
-    document.body.appendChild(brilho);
-
-
-    setTimeout(()=>{
-
-        brilho.remove();
-
-    },5000);
-
-}
-
-
-// cria brilhos automaticamente
-
-setInterval(criarBrilho,800);
-
-
-
-// ================================
-// EFEITO DE MOVIMENTO SUAVE NO CARTÃO
-// ================================
-
-const areaCartao = document.querySelector(".cartao");
-
-
-if(areaCartao){
-
-areaCartao.addEventListener("mousemove",(e)=>{
-
-    const largura = areaCartao.offsetWidth;
-    const altura = areaCartao.offsetHeight;
-
-
-    const x = (e.offsetX / largura - 0.5) * 10;
-    const y = (e.offsetY / altura - 0.5) * 10;
-
-
-    areaCartao.style.transform =
-    `rotateY(${x}deg) rotateX(${-y}deg)`;
-
-});
-
-
-areaCartao.addEventListener("mouseleave",()=>{
-
-    areaCartao.style.transform =
-    "rotateY(0deg) rotateX(0deg)";
-
-});
-
-
-}
-
-
-
-// ================================
-// MÚSICA AUTOMÁTICA (OPCIONAL)
-// ================================
-
-const musica = document.getElementById("musica");
-
-
-const iniciarMusica = ()=>{
-
-    if(musica){
-
-        musica.play().catch(()=>{});
-
-    }
-
-};
-
-
-document.addEventListener(
-"click",
-iniciarMusica,
-{once:true}
-);
-
-
-
-// ================================
-// DATA / CONTAGEM REGRESSIVA
-// ================================
-
-const dataEvento = document.querySelector("#dataEvento");
-
-
-if(dataEvento){
-
-    const data = new Date(dataEvento.dataset.data);
-
-    const atualizar = ()=>{
-
-        const agora = new Date();
-
-        const distancia = data - agora;
-
-
-        if(distancia <= 0){
-
-            return;
-
-        }
-
-
-        const dias = Math.floor(
-        distancia / (1000*60*60*24)
-        );
-
-
-        const horas = Math.floor(
-        (distancia/(1000*60*60))%24
-        );
-
-
-        const minutos = Math.floor(
-        (distancia/(1000*60))%60
-        );
-
-
-        const segundos = Math.floor(
-        (distancia/1000)%60
-        );
-
-
-        const contador =
-        document.querySelector("#contador");
-
-
-        if(contador){
-
-            contador.innerHTML =
-            `${dias} dias ${horas}h ${minutos}m ${segundos}s`;
-
-        }
-
-    };
-
-
-    setInterval(atualizar,1000);
-
-    atualizar();
-
-}
-
-
-
-// ================================
-// FINAL
-// ================================
-
-console.log(
-"🌹 Convite carregado com sucesso!"
-);
+// BRIL
