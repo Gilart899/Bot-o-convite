@@ -554,3 +554,352 @@ width:45px;
 }
 
 }
+/* ==========================================
+   ANIMAÇÕES DO CONVITE DIGITAL
+========================================== */
+
+
+/* ================================
+   ENTRADA DO CARTÃO
+================================ */
+
+.cartao{
+    opacity:0;
+    transform:
+    translateY(40px)
+    scale(.95);
+
+    transition:
+    1.5s ease;
+}
+
+
+.cartao.entrada{
+
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+
+}
+
+
+
+/* ================================
+   EFEITO 3D DO CARTÃO
+================================ */
+
+.cartao{
+
+    transform-style:preserve-3d;
+
+    perspective:1000px;
+
+}
+
+
+
+/* ================================
+   MENSAGEM PIX
+================================ */
+
+#mensagemPix{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%)
+    translateY(40px);
+
+    background:
+    rgba(0,0,0,.8);
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    opacity:0;
+
+    transition:.5s;
+
+    z-index:9999;
+
+}
+
+
+
+#mensagemPix.mostrar{
+
+    opacity:1;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+
+}
+
+
+
+/* ================================
+   ROSAS FLUTUANDO
+================================ */
+
+.rosa{
+
+    animation:
+
+    flutuarRosa
+    4s ease-in-out infinite;
+
+}
+
+
+
+@keyframes flutuarRosa{
+
+
+    0%,100%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+
+    50%{
+
+        transform:
+        translateY(-15px)
+        rotate(5deg);
+
+    }
+
+}
+
+
+
+/* ================================
+   VELAS TREMULANDO
+================================ */
+
+.vela{
+
+    animation:
+
+    chama
+    0.8s infinite alternate;
+
+}
+
+
+
+@keyframes chama{
+
+
+    from{
+
+        transform:
+        rotate(-3deg)
+        scale(1);
+
+    }
+
+
+    to{
+
+        transform:
+        rotate(3deg)
+        scale(1.08);
+
+    }
+
+}
+
+
+
+/* ================================
+   BRILHOS PELO FUNDO
+================================ */
+
+.brilho{
+
+    position:fixed;
+
+    top:100%;
+
+    width:6px;
+
+    height:6px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.8;
+
+    animation:
+
+    subirBrilho
+    linear infinite;
+
+    pointer-events:none;
+
+    z-index:10;
+
+}
+
+
+
+@keyframes subirBrilho{
+
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        scale(.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ================================
+   BOTÃO PIX COM DESTAQUE
+================================ */
+
+#copiarPix{
+
+    animation:
+
+    pulsarPix
+    2s infinite;
+
+}
+
+
+
+@keyframes pulsarPix{
+
+
+    0%{
+
+        box-shadow:
+        0 0 0 0 rgba(255,255,255,.5);
+
+    }
+
+
+    70%{
+
+        box-shadow:
+        0 0 0 15px transparent;
+
+    }
+
+
+    100%{
+
+        box-shadow:
+        0 0 0 0 transparent;
+
+    }
+
+}
+
+
+
+/* ================================
+   CONTADOR
+================================ */
+
+#contador{
+
+    animation:
+
+    aparecer
+    1s ease;
+
+}
+
+
+
+@keyframes aparecer{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+
+/* ================================
+   RESPONSIVO CELULAR
+================================ */
+
+@media(max-width:600px){
+
+    .cartao{
+
+        width:90%;
+
+    }
+
+
+    #mensagemPix{
+
+        width:80%;
+
+        text-align:center;
+
+    }
+
+}
