@@ -12,7 +12,47 @@ const botaoPix = document.getElementById("copiarPix");
 const chavePix = document.getElementById("chavePix");
 const mensagemPix = document.getElementById("mensagemPix");
 
+if (botaoPix && chavePix) {
 
+    botaoPix.addEventListener("click", async () => {
+
+        const textoPix = chavePix.textContent.trim();
+
+        try {
+
+            if (navigator.clipboard && window.isSecureContext) {
+
+                await navigator.clipboard.writeText(textoPix);
+
+            } else {
+
+                const area = document.createElement("textarea");
+                area.value = textoPix;
+                document.body.appendChild(area);
+                area.select();
+                document.execCommand("copy");
+                document.body.removeChild(area);
+
+            }
+
+            if (mensagemPix) {
+                mensagemPix.innerHTML = "✅ Chave PIX copiada!";
+                mensagemPix.classList.add("mostrar");
+
+                setTimeout(() => {
+                    mensagemPix.classList.remove("mostrar");
+                }, 3000);
+            }
+
+        } catch (erro) {
+
+            alert("Não foi possível copiar automaticamente.\n\nChave PIX:\n" + textoPix);
+
+        }
+
+    });
+
+}
 if (botaoPix) {
 
     botaoPix.addEventListener("click", () => {
