@@ -1,159 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Presente Via Pix | Mirella Santos Teles</title>
 
-<link rel="stylesheet"
-href="style.css">
+<link rel="stylesheet" href="style.css">
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- Céu -->
-
 <div class="ceu"></div>
-
-<!-- Estrelas -->
-
 <div class="estrelas"></div>
-
-<!-- Névoa -->
-
 <div class="nevoa"></div>
-
-<!-- Partículas -->
-
 <div class="particulas"></div>
-
-<!-- Moldura -->
 
 <div class="container">
 
-<div class="moldura">
+    <div class="moldura">
 
-<!-- Rosas -->
-<img src="img/rosa.png" class="rosa-centro">
-<img src="img/rosas-lateral.png" class="rosa-direita">
+        <!-- Rosas -->
+        <img src="img/rosa.png" class="rosa-esquerda" alt="Rosa">
 
-<!-- Velas -->
+        <img src="img/rosas-lateral.png" class="rosa-direita" alt="Rosas">
 
-<img
-src="img/vela-esquerda.png"
-class="vela-esquerda">
+        <div class="conteudo">
 
-<img
-src="img/vela-direita.png"
-class="vela-direita">
+            <h1>🎁 Presente Especial</h1>
 
-<!-- Conteúdo -->
+            <h2>Via Pix</h2>
 
-<div class="conteudo">
+            <p class="texto">
 
-<h1>
+                <strong>Obrigada de coração por desejar me presentear!</strong>
 
-🎁 Presente Especial
+                <br><br>
 
-</h1>
+                Por julgar mais prático, optei por não fazer uma lista de presentes.
 
-<h2>
+                <br><br>
 
-Via Pix
+                Caso deseje, você pode utilizar minha chave Pix abaixo.
 
-</h2>
+            </p>
 
-<p class="texto">
+            <div class="dados">
 
-<strong>
+                <h3>Mirella Santos Teles</h3>
 
-Obrigada de coração por desejar me presentear!
+                <p class="banco">Banco Inter</p>
 
-</strong>
+                <input
+                    id="chavePix"
+                    type="text"
+                    readonly
+                    value="79 99940-0547">
 
-<br><br>
+                <button id="copiarPix">
 
-Por julgar mais prático, optei  
+                    📋 Copiar Chave Pix
 
-por não fazer uma lista de presentes.
+                </button>
 
-Em vez disso,
+                <div id="mensagemPix" class="mensagem"></div>
 
-disponibilizo minha chave Pix.
+            </div>
 
-</p>
+        </div>
 
-<div class="dados">
-
-<h3>
-
-Mirella Santos Teles
-
-</h3>
-
-<p class="banco">
-
-Banco Inter
-
-</p>
-
-<input
-
-id="pix"
-
-readonly
-
-value="79 99940-0547"
-
->
-
-<button
-
-id="btnPix"
-
-onclick="copiarPix()">
-
-📋 Copiar Chave Pix
-
-</button>
-
-<div
-
-id="msgCopiado"
-
-
-
-<
-</div>
-
-</div>
-
-</div
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
