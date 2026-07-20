@@ -199,3 +199,38 @@ body::before{
     }
 
 }
+/* ===== Rosas flutuando no fundo ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+    url("img/rosa.png") 5% 15%/70px no-repeat,
+    url("img/rosa.png") 90% 20%/60px no-repeat,
+    url("img/rosas-lateral.png") 8% 75%/120px no-repeat,
+    url("img/rosas-lateral.png") 92% 70%/120px no-repeat;
+
+    opacity:.08;
+
+    animation:fundoMagico 20s ease-in-out infinite alternate;
+}
+
+@keyframes fundoMagico{
+
+    0%{
+        transform:translateY(0) rotate(-2deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(2deg);
+    }
+
+    100%{
+        transform:translateY(10px) rotate(-2deg);
+    }
+
+}
